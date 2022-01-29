@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="#" onclick="ls()">
+            <i class="fas fa-th-list"></i>
+        </a>
+        <select class="mode" onchange="change_mode(this.value)">
+            <option value="board" selected>Board</option>
+            <option value="calendar">Calendar</option>
+        </select>
+        
+        <h1>Project Team Sprint</h1>
+        <a href="#" onclick="modal_opent('create_board')">
+            <i class="fas fa-plus"></i>
+        </a>
+       <div class="users">
+       </div>
+       <a href="#" onclick="modal_opent('users')">
+        <i class="fas fa-ellipsis-h"></i>
+        </a>
+        <select class="filter" onchange="change_filter(this.value)"></select>
+        <a href="#" onclick="modal_opent('setting')"><i class="fas fa-cog"></i></a>
+    </header>    
+    <div class="mama" id="mama">
+        
+    </div>
+    
+
+    <template id="board_tmp">
+        <div class="board">
+            <div class="top"> 
+                <h1 contenteditable="true">test</h1> <!--  можно менять надпись -->
+                
+                <a href="#">
+                <i class="fas fa-ellipsis-h"></i>
+                </a>
+            </div>
+            <div class="content__board" ondrop="drop_handler(event)" ondragover="dragover_handler(event)">
+                
+                
+            </div>
+            <a href="#" class="add_card" onclick="modal_opent('create_card')" >
+                <p><i class="fas fa-plus"></i> Add another task</p>
+
+            </a>
+        </div>
+    </template>
+    <!-- для генерации board -->
+    <template id="card_tmp">
+        <div class="card" draggable="true" ondragstart="dragstart_handler(event)">
+            <div class="tags">
+            </div>
+
+            <p>текст</p>
+            <div class="icons-item">
+                <div class="data">
+                    <i class="far fa-clock"></i>
+                </div>
+                <i class="fas fa-align-left"></i>
+                <img src="./img/user.png" class="avatar" alt="">
+
+            </div>
+
+
+        </div>
+    </template>
+<!-- модальное окно -->
+    <div class="overlay" onclick="modal_close()"></div>
+    <div class="modal">
+        <div class="modal__title">
+            <h2></h2>
+            <i class="fas fa-times" onclick="modal_close()"></i>
+        </div>
+        <div class="modal__content"></div>
+    </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script> 
+</body>
+</html>

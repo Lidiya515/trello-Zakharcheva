@@ -1,0 +1,190 @@
+body{
+    background: linear-gradient(219deg, rgb(185 10 208 / 51%) 0%, rgb(9 9 121 / 59%) 45%, rgb(0 213 255 / 69%) 100%)no-repeat;
+    min-height: 100vh;
+    background-size: cover;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+header i{
+    margin-right: 15px ;
+    font-size: large;
+}
+header,
+.users,
+.top,
+.tags{
+    display: flex;
+    align-items: center;
+}
+header a,
+header h1,
+header div{
+    margin-left: 25px;
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+}
+.data{
+    background-color: #7f7;
+    border-radius: 5px;
+    padding: 3px;
+    color: #222;
+}
+.mama{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.board{
+    width: 200px;
+    margin: 30px;
+    border-radius: 15px;
+    box-shadow: 21px 26px 5px -5px rgba(178, 251, 248, 0.6);
+}
+.top{
+justify-content: space-around;
+}
+.tag{
+    width: 20px;
+    height:7px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+.card{
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.842);
+    color: rgba(255, 255, 255, 0.925);
+    margin:  10px 10px ;
+    padding: 5px 0;
+    border-radius: 5px;
+
+   
+}
+.icons-item{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.add_card{
+    position: relative;
+    left: 10px;
+}
+.list_users li{
+    display: flex;
+    
+    align-items: center;
+}
+.list_users li p{
+    margin-left: 15px;
+}
+.list_users {
+    overflow-y: scroll;
+    height: 300px;
+}
+.tag_sel{
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+.tag_sel:hover {
+    border-radius: 3px;
+    border-color: #888;
+    border-style: solid;
+    cursor: pointer;
+}
+
+.img_sel{
+    width: 130px;
+    height: 70px;
+    margin-left: 5px;
+}
+.img_sel:hover {
+    border-radius: 3px;
+    border-color: #888;
+    border-style: solid;
+    cursor: pointer;
+}
+
+.add_user {
+    background: #13a032;
+    border-radius: 3px;
+    color: #f9f0f0;
+    display: inline-block;
+    font-size: 15px;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    min-width: 60px;
+    position: relative;
+    transition: color .1s ease;
+}
+.add_user:hover {
+    background: #17d027;    
+}
+.add_user {
+    font-size: 18px;
+    padding: 15px 20px;
+    min-width: 100px;
+}
+
+
+.content__board{
+    min-height: 50px;
+}
+
+/*модалка*/
+
+.modal__title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.overlay {
+    opacity: 0;
+    visibility: hidden;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0008;
+    z-index: 20;
+    transition: 0.3s all;
+}
+
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    
+    width: 100%;
+    max-width: 500px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 30;
+
+    box-shadow: 0 3px 10px -0.5px #0005;
+    text-align: center;
+    padding: 30px;
+    border-radius: 3px;
+    background-color: #fff;
+    transition: 0.3s all;
+}
+
+.modal.active,
+.overlay.active{
+   opacity: 1;
+   visibility: visible;
+}
